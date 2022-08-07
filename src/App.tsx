@@ -1,22 +1,32 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "src/components/Navigation/Navbar/Navbar";
+import { useLocation } from "react-router-dom";
 import Dashboard from "src/pages/Dashboard";
 import Login from "src/pages/Login/Login";
-import Register from "src/pages/Login/Login";
+import Navbar from "src/components/Navigation/Navbar/Navbar";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [showNav, setShowNav] = useState(false);
+  let location = useLocation();
+  useEffect(() => {
+    if (location.pathname !== "/login") {
+      console.log("Settings showNav = true");
+      setShowNav(true);
+    } else {
+      setShowNav(false);
+    }
+  }, [location]);
+
   return (
     <>
-      <Router>
-        <div className="container">
-          {window.location.pathname !== "/login" && <Navbar />}
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-        </div>
-      </Router>
+      <div className="App">
+        {showNav && <Navbar />}
+        <Routes>
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
+      </div>
     </>
   );
 }
