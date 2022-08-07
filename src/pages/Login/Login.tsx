@@ -20,7 +20,6 @@ function Login() {
   }
 
   useEffect(() => {
-    /* global google */
     try {
       google.accounts.id.initialize({
         client_id:
@@ -35,6 +34,7 @@ function Login() {
     } catch (err) {
       console.error(err);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [test]);
 
   return (
