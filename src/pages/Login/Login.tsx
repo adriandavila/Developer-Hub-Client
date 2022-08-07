@@ -34,6 +34,7 @@ function Login() {
       });
     } catch (err) {
       console.error(err);
+      setTest(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [test]);
