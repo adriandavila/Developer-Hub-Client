@@ -20,6 +20,7 @@ function Login() {
   }
 
   useEffect(() => {
+    if (test === 0) return;
     try {
       google.accounts.id.initialize({
         client_id:
