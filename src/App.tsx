@@ -1,9 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import Dashboard from "src/pages/Dashboard";
-import Login from "src/pages/Login/Login";
-import Navbar from "src/components/Navigation/Navbar/Navbar";
 import { useEffect, useState } from "react";
+
+// Components
+import Navbar from "src/components/Navigation/Navbar/Navbar";
+
+// Pages
+import Login from "src/pages/Login/Login";
+import Dashboard from "src/pages/Dashboard";
 
 function App() {
   const [showNav, setShowNav] = useState(false);

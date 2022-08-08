@@ -2,14 +2,16 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-import styles from "./login.module.scss";
 
-// Components
+// MUI Components
 import Fade from "@mui/material/Fade";
 
-// Icons
+// MUI Icons
 import IconButton from "@mui/material/IconButton";
 import GoogleIcon from "@mui/icons-material/Google";
+
+// Styling
+import styles from "./login.module.scss";
 
 declare var google: any;
 
