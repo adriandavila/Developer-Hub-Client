@@ -27,8 +27,6 @@ function App() {
       <div className="App">
         {showNav && <Navbar />}
         <Routes>
-          <Route path="/login" element={<Login setToken={setToken} />} />
-
           <Route path="/" element={<Dashboard />} />
         </Routes>
       </div>
