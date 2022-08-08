@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
@@ -7,12 +8,13 @@ import GoogleIcon from "@mui/icons-material/Google";
 
 declare var google: any;
 
-function Login() {
+function Login({ setToken }: any) {
   const [test, setTest] = useState(0);
 
   const navigate = useNavigate();
 
   function handleCallbackResponse(response: any) {
+    setToken(response);
     console.log("Encoded JWT ID token: " + response.credential);
     let userObject = jwt_decode(response.credential);
     console.log("🚀 ~ file: Login.tsx ~ userObject", userObject);
@@ -60,5 +62,9 @@ function Login() {
     </>
   );
 }
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
+};
 
 export default Login;

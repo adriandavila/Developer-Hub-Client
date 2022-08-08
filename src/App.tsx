@@ -7,22 +7,27 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [showNav, setShowNav] = useState(false);
+  const [token, setToken] = useState();
+
   let location = useLocation();
   useEffect(() => {
     if (location.pathname !== "/login") {
-      console.log("Settings showNav = true");
       setShowNav(true);
     } else {
       setShowNav(false);
     }
   }, [location]);
 
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
+
   return (
     <>
       <div className="App">
         {showNav && <Navbar />}
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setToken={setToken} />} />
 
           <Route path="/" element={<Dashboard />} />
         </Routes>
