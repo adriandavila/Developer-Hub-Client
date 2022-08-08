@@ -3,6 +3,11 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import styles from "./login.module.scss";
+
+// Components
+import Fade from "@mui/material/Fade";
+
+// Icons
 import IconButton from "@mui/material/IconButton";
 import GoogleIcon from "@mui/icons-material/Google";
 
@@ -44,20 +49,22 @@ function Login({ setToken }: any) {
   return (
     <>
       <div className={styles.background}>
-        <div className={styles.mainContainer}>
-          <h2 className={styles.welcomeText}>Welcome</h2>
-          {test === 0 && (
-            <IconButton
-              aria-label="delete"
-              size="small"
-              color="inherit"
-              onClick={() => setTest(test + 1)}
-            >
-              <GoogleIcon />
-            </IconButton>
-          )}
-          {test !== 0 && <div id="signInDiv"></div>}
-        </div>
+        <Fade in timeout={3000}>
+          <div className={styles.mainContainer}>
+            <h2 className={styles.welcomeText}>Welcome</h2>
+            {test === 0 && (
+              <IconButton
+                aria-label="delete"
+                size="small"
+                color="inherit"
+                onClick={() => setTest(test + 1)}
+              >
+                <GoogleIcon />
+              </IconButton>
+            )}
+            {test !== 0 && <div id="signInDiv"></div>}
+          </div>
+        </Fade>
       </div>
     </>
   );
