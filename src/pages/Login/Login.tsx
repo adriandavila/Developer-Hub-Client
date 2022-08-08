@@ -49,7 +49,7 @@ function Login({ setToken }: any) {
   return (
     <>
       <div className={styles.background}>
-        <Fade in timeout={3000}>
+        <Fade in timeout={2250}>
           <div className={styles.mainContainer}>
             <h2 className={styles.welcomeText}>Welcome</h2>
             {test === 0 && (
