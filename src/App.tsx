@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 // Components
 import Navbar from "src/components/Navigation/Navbar/Navbar";
@@ -11,7 +12,7 @@ import Dashboard from "src/pages/Dashboard";
 
 function App() {
   const [showNav, setShowNav] = useState(false);
-  const [token, setToken] = useState();
+  const { user } = useSelector((state: any) => state.auth);
 
   let location = useLocation();
   useEffect(() => {
@@ -22,8 +23,8 @@ function App() {
     }
   }, [location]);
 
-  if (!token) {
-    return <Login setToken={setToken} />;
+  if (!user) {
+    return <Login />;
   }
 
   return (

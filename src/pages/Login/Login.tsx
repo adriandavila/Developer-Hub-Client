@@ -1,10 +1,12 @@
-import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode";
+import { toast } from "react-toastify";
+import { login, reset } from "src/features/auth/authSlice";
 
 // MUI Components
 import Fade from "@mui/material/Fade";
+import CircularProgress from "@mui/material/CircularProgress";
 
 // MUI Icons
 import IconButton from "@mui/material/IconButton";
@@ -12,19 +14,35 @@ import GoogleIcon from "@mui/icons-material/Google";
 
 // Styling
 import styles from "./login.module.scss";
+import { AppDispatch } from "src/app/store";
 
 declare var google: any;
 
-function Login({ setToken }: any) {
+function Login() {
   const [test, setTest] = useState(0);
 
   const navigate = useNavigate();
+  const dispatch: AppDispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state: any) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+
+    if (isSuccess || user) {
+      navigate("/");
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   function handleCallbackResponse(response: any) {
-    setToken(response);
-    console.log("Encoded JWT ID token: " + response.credential);
-    let userObject = jwt_decode(response.credential);
-    console.log("🚀 ~ file: Login.tsx ~ userObject", userObject);
+    const token = { token: response };
+    dispatch(login(token));
     navigate("/");
   }
 
@@ -47,6 +65,10 @@ function Login({ setToken }: any) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [test]);
+
+  if (isLoading) {
+    return <CircularProgress />;
+  }
 
   return (
     <>
@@ -71,9 +93,5 @@ function Login({ setToken }: any) {
     </>
   );
 }
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};
 
 export default Login;
