@@ -19,7 +19,7 @@ import { AppDispatch } from "src/app/store";
 declare var google: any;
 
 function Login() {
-  const [test, setTest] = useState(0);
+  const [googleScriptLoaded, setGoogleScriptLoaded] = useState(0);
 
   const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
@@ -47,7 +47,7 @@ function Login() {
   }
 
   useEffect(() => {
-    if (test === 0) return;
+    if (googleScriptLoaded === 0) return;
     try {
       google.accounts.id.initialize({
         client_id:
@@ -61,10 +61,10 @@ function Login() {
       });
     } catch (err) {
       console.error(err);
-      setTest(0);
+      setGoogleScriptLoaded(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [test]);
+  }, [googleScriptLoaded]);
 
   if (isLoading) {
     return <CircularProgress />;
@@ -76,17 +76,17 @@ function Login() {
         <Fade in timeout={2250}>
           <div className={styles.mainContainer}>
             <h2 className={styles.welcomeText}>Welcome</h2>
-            {test === 0 && (
+            {googleScriptLoaded === 0 && (
               <IconButton
                 aria-label="delete"
                 size="small"
                 color="inherit"
-                onClick={() => setTest(test + 1)}
+                onClick={() => setGoogleScriptLoaded(googleScriptLoaded + 1)}
               >
                 <GoogleIcon />
               </IconButton>
             )}
-            {test !== 0 && <div id="signInDiv"></div>}
+            {googleScriptLoaded !== 0 && <div id="signInDiv"></div>}
           </div>
         </Fade>
       </div>
