@@ -14,7 +14,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 
 // Styling
 import styles from "./login.module.scss";
-import { AppDispatch } from "src/app/store";
+import { useAppDispatch } from "src/app/hooks";
 
 declare var google: any;
 
@@ -22,7 +22,7 @@ function Login() {
   const [googleScriptLoaded, setGoogleScriptLoaded] = useState(0);
 
   const navigate = useNavigate();
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state: any) => state.auth
