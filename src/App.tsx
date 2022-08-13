@@ -19,7 +19,7 @@ import { Box, CssBaseline, ThemeProvider, Toolbar } from "@mui/material";
 import themes from "src/themes/themes";
 
 function App() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const { user } = useSelector((state: any) => state.auth);
 
