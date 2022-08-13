@@ -5,12 +5,18 @@ import { useSelector } from "react-redux";
 
 // Components
 import Navbar from "src/components/Navigation/Navbar/Navbar";
+import { Paper } from "@mui/material";
 
 // Pages
 import Login from "src/pages/Login/Login";
 import Dashboard from "src/pages/Dashboard";
 
+// Theming
+import { ThemeProvider } from "@mui/material";
+import themes from "src/themes/themes";
+
 function App() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [showNav, setShowNav] = useState(false);
   const { user } = useSelector((state: any) => state.auth);
 
@@ -29,12 +35,16 @@ function App() {
 
   return (
     <>
-      <div className="App">
-        {showNav && <Navbar />}
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-        </Routes>
-      </div>
+      <ThemeProvider theme={themes[theme]}>
+        <div className="App">
+          <Paper style={{ height: "100vh" }}>
+            {showNav && <Navbar />}
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+            </Routes>
+          </Paper>
+        </div>
+      </ThemeProvider>
     </>
   );
 }
