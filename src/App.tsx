@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 // Components
@@ -21,17 +20,8 @@ import themes from "src/themes/themes";
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
-  const [showNav, setShowNav] = useState(false);
-  const { user } = useSelector((state: any) => state.auth);
 
-  let location = useLocation();
-  useEffect(() => {
-    if (location.pathname !== "/login") {
-      setShowNav(true);
-    } else {
-      setShowNav(false);
-    }
-  }, [location]);
+  const { user } = useSelector((state: any) => state.auth);
 
   if (!user) {
     return <Login />;
