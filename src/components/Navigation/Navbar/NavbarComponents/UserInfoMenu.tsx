@@ -10,6 +10,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
+// Custom Components
+import { AppThemeSwitch } from "src/components/Misc/AppThemeSwitch";
+
 // Icons
 import { Logout, Settings } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
@@ -78,6 +81,10 @@ export default function UserInfoMenu() {
         <MenuItem>
           <Avatar /> Profile
         </MenuItem>
+        <Divider />
+        <Box>
+          <AppThemeSwitch />
+        </Box>
         <Divider />
         <MenuItem>
           <ListItemIcon>
