@@ -30,19 +30,17 @@ function App() {
   return (
     <>
       <ThemeProvider theme={themes[theme]}>
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex", height: "100vh" }}>
           <CssBaseline />
           <Navbar />
           <Sidebar />
           <Box component="main" sx={{ flexGrow: 1 }}>
-            <Toolbar />
             <CssBaseline />
-            <Paper sx={{ display: "flex" }}>
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/settings" element={<Settings />} />
-              </Routes>
-            </Paper>
+            <Toolbar />
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
           </Box>
         </Box>
       </ThemeProvider>
