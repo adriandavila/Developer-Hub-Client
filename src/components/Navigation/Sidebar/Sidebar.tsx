@@ -17,7 +17,7 @@ import { SidebarData } from "./SidebarData";
 // Custom Components
 import ProfileInformation from "src/components/Misc/ProfileInformation";
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 function Sidebar() {
   return (
