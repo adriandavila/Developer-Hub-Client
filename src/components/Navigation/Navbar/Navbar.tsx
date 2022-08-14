@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
 // Custom components
+import Logo from "src/components/Logo/Logo";
 import UserInfoMenu from "./NavbarComponents/UserInfoMenu";
 
 export default function ButtonAppBar() {
@@ -24,9 +25,8 @@ export default function ButtonAppBar() {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          DevHub
-        </Typography>
+        <Logo />
+
         <UserInfoMenu />
       </Toolbar>
     </AppBar>
