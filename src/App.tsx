@@ -8,7 +8,7 @@ import Sidebar from "src/components/Navigation/Sidebar/Sidebar";
 
 // Pages
 import Login from "src/pages/Login/Login";
-import Dashboard from "src/pages/Dashboard";
+import Home from "src/pages/Home";
 import Settings from "src/pages/Settings/Settings";
 
 // Theming
@@ -36,7 +36,7 @@ function App() {
             <Toolbar />
             <Box sx={{ height: "calc(100% - 64px)" }}>
               <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
             </Box>
