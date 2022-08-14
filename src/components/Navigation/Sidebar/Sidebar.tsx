@@ -1,8 +1,8 @@
 // MUI Components
 import {
   Box,
-  Divider,
   Drawer,
+  Link,
   List,
   ListItem,
   ListItemButton,
@@ -11,8 +11,8 @@ import {
   Toolbar,
 } from "@mui/material";
 
-// Icons
-import GoogleIcon from "@mui/icons-material/Google";
+// Sidebar Data
+import { SidebarData } from "./SidebarData";
 
 const drawerWidth = 240;
 
@@ -33,25 +33,16 @@ function Sidebar() {
         <Toolbar />
         <Box sx={{ overflow: "auto" }}>
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <GoogleIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Inbox"} />
-              </ListItemButton>
-            </ListItem>
-          </List>
-          <Divider />
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <GoogleIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Dash"} />
-              </ListItemButton>
-            </ListItem>
+            {SidebarData.map((item, index) => {
+              return (
+                <ListItem disablePadding key={index}>
+                  <ListItemButton component={Link} href={item.path}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
           </List>
         </Box>
       </Drawer>
