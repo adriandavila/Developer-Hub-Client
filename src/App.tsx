@@ -8,8 +8,14 @@ import Sidebar from "src/components/Navigation/Sidebar/Sidebar";
 
 // Pages
 import Login from "src/pages/Login/Login";
-import Home from "src/pages/Home";
+import Home from "src/pages/Global/Home";
 import Settings from "src/pages/Settings/Settings";
+import Timesheets from "src/pages/Global/Timesheets";
+import Minigames from "src/pages/Global/Minigames";
+import PersonalDashboard from "src/pages/Developers/PersonalDashboard";
+import TeamDashboard from "src/pages/Developers/TeamDashboard";
+import UserManagement from "src/pages/Administrators/UserManagement";
+import TimesheetManagement from "src/pages/Administrators/TimesheetManagement";
 
 // Theming
 import { Box, CssBaseline, ThemeProvider, Toolbar } from "@mui/material";
@@ -38,6 +44,21 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/timesheets" element={<Timesheets />} />
+                <Route path="/minigames" element={<Minigames />} />
+                <Route
+                  path="/personal-dashboard"
+                  element={<PersonalDashboard />}
+                />
+                <Route path="/team-dashboard" element={<TeamDashboard />} />
+                <Route
+                  path="/user-administration"
+                  element={<UserManagement />}
+                />
+                <Route
+                  path="/timesheet-administration"
+                  element={<TimesheetManagement />}
+                />
               </Routes>
             </Box>
           </Box>

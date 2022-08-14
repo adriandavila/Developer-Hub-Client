@@ -1,6 +1,8 @@
 // MUI Components
 import {
   Box,
+  Chip,
+  Divider,
   Drawer,
   Link,
   List,
@@ -12,7 +14,11 @@ import {
 } from "@mui/material";
 
 // Sidebar Data
-import { SidebarData } from "./SidebarData";
+import {
+  GlobalSidebarData,
+  DeveloperSidebarData,
+  AdministratorSidebarData,
+} from "./SidebarData";
 
 // Custom Components
 import ProfileInformation from "src/components/Misc/ProfileInformation";
@@ -38,8 +44,41 @@ function Sidebar() {
           <Box sx={{ ml: 2, mt: 2 }}>
             <ProfileInformation />
           </Box>
+          <Divider sx={{ mt: 2 }}>
+            <Chip label="H2 Analytics" />
+          </Divider>
           <List>
-            {SidebarData.map((item, index) => {
+            {GlobalSidebarData.map((item, index) => {
+              return (
+                <ListItem disablePadding key={index}>
+                  <ListItemButton component={Link} href={item.path}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
+          <Divider>
+            <Chip label="Developers" />
+          </Divider>
+          <List>
+            {DeveloperSidebarData.map((item, index) => {
+              return (
+                <ListItem disablePadding key={index}>
+                  <ListItemButton component={Link} href={item.path}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+          </List>
+          <Divider>
+            <Chip label="Administrators" />
+          </Divider>
+          <List>
+            {AdministratorSidebarData.map((item, index) => {
               return (
                 <ListItem disablePadding key={index}>
                   <ListItemButton component={Link} href={item.path}>
