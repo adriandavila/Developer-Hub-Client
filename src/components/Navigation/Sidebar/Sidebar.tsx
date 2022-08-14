@@ -14,6 +14,9 @@ import {
 // Sidebar Data
 import { SidebarData } from "./SidebarData";
 
+// Custom Components
+import ProfileInformation from "src/components/Misc/ProfileInformation";
+
 const drawerWidth = 240;
 
 function Sidebar() {
@@ -32,6 +35,9 @@ function Sidebar() {
       >
         <Toolbar />
         <Box sx={{ overflow: "auto" }}>
+          <Box sx={{ ml: 2, mt: 2 }}>
+            <ProfileInformation />
+          </Box>
           <List>
             {SidebarData.map((item, index) => {
               return (

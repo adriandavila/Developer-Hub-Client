@@ -12,6 +12,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 
 // Custom Components
 import { AppThemeSwitch } from "src/components/Misc/AppThemeSwitch";
+import ProfileInformation from "src/components/Misc/ProfileInformation";
 
 // Icons
 import { Logout, Settings } from "@mui/icons-material";
@@ -79,13 +80,13 @@ export default function UserInfoMenu() {
         }}
       >
         <MenuItem>
-          <Avatar /> Profile
+          <ProfileInformation />
         </MenuItem>
-        <Divider />
+        <Divider sx={{ my: 1 }} />
         <Box>
           <AppThemeSwitch />
         </Box>
-        <Divider />
+        <Divider sx={{ my: 1 }} />
         <MenuItem>
           <ListItemIcon>
             <Settings fontSize="small" />
