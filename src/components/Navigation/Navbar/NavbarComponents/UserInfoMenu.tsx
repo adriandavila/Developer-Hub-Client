@@ -1,10 +1,8 @@
 // React
 import * as React from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 
 // MUI Components
-import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
@@ -13,6 +11,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 // Custom Components
 import { AppThemeSwitch } from "src/components/Misc/AppThemeSwitch";
 import ProfileInformation from "src/components/Misc/ProfileInformation";
+import UserAvatar from "src/components/Misc/UserAvatar";
 
 // Icons
 import { Logout, Settings } from "@mui/icons-material";
@@ -20,7 +19,6 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 
 export default function UserInfoMenu() {
-  const { user } = useSelector((state: any) => state.auth);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -34,7 +32,7 @@ export default function UserInfoMenu() {
   return (
     <Box sx={{ flexGrow: 0 }}>
       <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-        <Avatar alt={user.name} src={user.picture} />
+        <UserAvatar />
       </IconButton>
 
       <Menu

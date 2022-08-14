@@ -1,10 +1,15 @@
 // MUI Components
-import { Avatar, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+
+// Custom components
+import UserAvatar from "./UserAvatar";
 
 function ProfileInformation() {
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
-      <Avatar sx={{ mr: 1 }} />
+      <Box sx={{ mr: 1 }}>
+        <UserAvatar />
+      </Box>
       <div>
         <Typography>Adrian Davila</Typography>
         <Typography>adrian@h2analytics.ca</Typography>
