@@ -7,8 +7,8 @@ function Logo() {
       component="div"
       sx={{
         flexGrow: 1,
-        "font-family": '"Caveat", cursive',
-        "font-size": "30px",
+        fontFamily: '"Caveat", cursive',
+        fontSize: "30px",
       }}
     >
       H2 DevHub
