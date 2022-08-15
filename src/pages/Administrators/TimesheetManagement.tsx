@@ -1,9 +1,10 @@
 import { Container } from "@mui/material";
+import PageTitle from "src/components/Misc/PageTitle";
 
 function TimesheetManagement() {
   return (
     <Container sx={{ p: 2, m: 0 }}>
-      <h1>Timesheet Management</h1>
+      <PageTitle title="Timesheet Management" />
     </Container>
   );
 }

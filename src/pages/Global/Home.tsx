@@ -1,10 +1,11 @@
 import { Container } from "@mui/material";
+import PageTitle from "src/components/Misc/PageTitle";
 
 function Home() {
   return (
     <>
-      <Container sx={{ p: 2, m: 0 }}>
-        <h1>Home</h1>
+      <Container maxWidth={false} sx={{ p: 2, m: 0 }}>
+        <PageTitle title="Home" />
       </Container>
     </>
   );
