@@ -41,7 +41,7 @@ function Login() {
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   function handleCallbackResponse(response: any) {
-    const token = { token: response };
+    const token = { token: response.credential };
     dispatch(login(token));
     navigate("/");
   }
