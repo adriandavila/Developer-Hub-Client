@@ -3,7 +3,7 @@ import PageTitle from "src/components/Misc/PageTitle";
 
 function Minigames() {
   return (
-    <Container sx={{ p: 2, m: 0 }}>
+    <Container maxWidth={false} sx={{ p: 2, m: 0 }}>
       <PageTitle title="Mini Games" />
     </Container>
   );
