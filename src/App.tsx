@@ -25,10 +25,6 @@ import { ThemeContext } from "./themes/ThemeContext";
 const localStorageTheme: "light" | "dark" | null = localStorage.getItem(
   "selectedTheme"
 ) as "light" | "dark" | null;
-console.log(
-  "🚀 ~ file: App.tsx ~ line 28 ~ localStorageTheme",
-  localStorageTheme
-);
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">(
