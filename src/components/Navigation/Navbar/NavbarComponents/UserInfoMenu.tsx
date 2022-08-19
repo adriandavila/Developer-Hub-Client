@@ -9,7 +9,7 @@ import Divider from "@mui/material/Divider";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
 // Custom Components
-import { AppThemeSwitch } from "src/components/Misc/AppThemeSwitch";
+import AppThemeSwitch from "src/components/Misc/AppThemeSwitch";
 import ProfileInformation from "src/components/Misc/ProfileInformation";
 import UserAvatar from "src/components/Misc/UserAvatar";
 

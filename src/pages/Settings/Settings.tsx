@@ -2,7 +2,7 @@
 import { Container } from "@mui/material";
 
 // Custom Components
-import { AppThemeSwitch } from "src/components/Misc/AppThemeSwitch";
+import AppThemeSwitch from "src/components/Misc/AppThemeSwitch";
 
 function Settings() {
   return (

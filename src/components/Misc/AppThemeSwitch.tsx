@@ -1,7 +1,8 @@
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
+import { useTheme } from "src/hooks/useTheme";
 
-export const AppThemeSwitch = styled(Switch)(({ theme }) => ({
+const ThemeSwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
   padding: 7,
@@ -47,3 +48,14 @@ export const AppThemeSwitch = styled(Switch)(({ theme }) => ({
     borderRadius: 20 / 2,
   },
 }));
+
+function AppThemeSwitch() {
+  const theme = useTheme();
+  return (
+    <ThemeSwitch
+      onClick={() => theme.setTheme(theme.theme === "light" ? "dark" : "light")}
+    />
+  );
+}
+
+export default AppThemeSwitch;
