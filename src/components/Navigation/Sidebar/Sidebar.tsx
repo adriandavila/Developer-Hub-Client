@@ -38,6 +38,7 @@ function Sidebar() {
             boxSizing: "border-box",
           },
         }}
+        BackdropProps={{ invisible: true }}
       >
         <Toolbar />
         <Box sx={{ overflow: "auto" }}>
