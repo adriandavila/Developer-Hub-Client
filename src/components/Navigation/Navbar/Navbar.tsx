@@ -8,8 +8,10 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 
 // Custom components
 import Logo from "src/components/Logo/Logo";
+import SettingsBtn from "./NavbarComponents/SettingsBtn";
+import NotificationsBtn from "./NavbarComponents/NotificationsBtn";
 import UserInfoMenu from "./NavbarComponents/UserInfoMenu";
-import { Divider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 
 export default function ButtonAppBar() {
   return (
@@ -30,8 +32,11 @@ export default function ButtonAppBar() {
           sx={{ mr: 2, color: "white", fill: "white" }}
         />
         <Logo />
-
-        <UserInfoMenu />
+        <SettingsBtn />
+        <NotificationsBtn />
+        <Box sx={{ ml: 1 }}>
+          <UserInfoMenu />
+        </Box>
       </Toolbar>
     </AppBar>
   );
