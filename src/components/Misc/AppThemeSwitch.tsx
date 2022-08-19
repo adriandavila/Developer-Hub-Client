@@ -53,7 +53,15 @@ function AppThemeSwitch() {
   const theme = useTheme();
   return (
     <ThemeSwitch
-      onClick={() => theme.setTheme(theme.theme === "light" ? "dark" : "light")}
+      onClick={() => {
+        const selectedTheme = theme.theme === "light" ? "dark" : "light";
+        theme.setTheme(selectedTheme);
+        localStorage.setItem("selectedTheme", selectedTheme);
+        console.log(
+          "LOCAL STORAGE THEME SET TO",
+          localStorage.getItem("selectedTheme")
+        );
+      }}
     />
   );
 }

@@ -22,8 +22,18 @@ import { Box, CssBaseline, ThemeProvider, Toolbar } from "@mui/material";
 import themes from "src/themes/themes";
 import { ThemeContext } from "./themes/ThemeContext";
 
+const localStorageTheme: "light" | "dark" | null = localStorage.getItem(
+  "selectedTheme"
+) as "light" | "dark" | null;
+console.log(
+  "🚀 ~ file: App.tsx ~ line 28 ~ localStorageTheme",
+  localStorageTheme
+);
+
 function App() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">(
+    localStorageTheme ? localStorageTheme : "light"
+  );
 
   const { user } = useSelector((state: any) => state.auth);
 
