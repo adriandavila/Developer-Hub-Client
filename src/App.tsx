@@ -28,7 +28,7 @@ const localStorageTheme: "light" | "dark" | null = localStorage.getItem(
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">(
-    localStorageTheme ? localStorageTheme : "light"
+    localStorageTheme ? localStorageTheme : "dark"
   );
 
   const { user } = useSelector((state: any) => state.auth);
