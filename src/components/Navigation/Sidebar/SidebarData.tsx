@@ -26,7 +26,7 @@ export const GlobalSidebarData: SidebarDatum[] = [
     icon: <HomeIcon />,
   },
   {
-    title: "Timesheets",
+    title: "My Timesheets",
     path: "/timesheets",
     icon: <AccessTimeIcon />,
   },
