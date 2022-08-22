@@ -1,6 +1,8 @@
 // React
 import * as React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 // MUI Components
 import Menu from "@mui/material/Menu";
@@ -19,7 +21,12 @@ import { Logout, Settings } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 
+// Services
+import { logout, reset } from "src/features/auth/authSlice";
+
 export default function UserInfoMenu() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch<any>();
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -28,6 +35,12 @@ export default function UserInfoMenu() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
   };
 
   return (
@@ -92,7 +105,7 @@ export default function UserInfoMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={onLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
