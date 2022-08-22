@@ -12,7 +12,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import { Link } from "@mui/material";
 
 // Custom Components
-import AppThemeSwitch from "src/components/Misc/AppThemeSwitch";
 import ProfileInformation from "src/components/Misc/ProfileInformation";
 import UserAvatar from "src/components/Misc/UserAvatar";
 
@@ -23,6 +22,7 @@ import Box from "@mui/material/Box";
 
 // Services
 import { logout, reset } from "src/features/auth/authSlice";
+import { useTheme } from "src/hooks/useTheme";
 
 export default function UserInfoMenu() {
   const navigate = useNavigate();
@@ -41,6 +41,13 @@ export default function UserInfoMenu() {
     dispatch(logout());
     dispatch(reset());
     navigate("/");
+  };
+
+  const theme = useTheme();
+
+  const menuDropShadow = {
+    light: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+    dark: "drop-shadow(0px 2px 8px rgba(255,255,255,0.1))",
   };
 
   return (
@@ -68,7 +75,7 @@ export default function UserInfoMenu() {
           elevation: 0,
           sx: {
             overflow: "visible",
-            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+            filter: menuDropShadow[theme.theme as "light" | "dark"],
             mt: 1.5,
             "& .MuiAvatar-root": {
               width: 32,
