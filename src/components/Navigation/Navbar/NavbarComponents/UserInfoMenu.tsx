@@ -95,10 +95,6 @@ export default function UserInfoMenu() {
           <ProfileInformation />
         </MenuItem>
         <Divider sx={{ my: 1 }} />
-        <Box>
-          <AppThemeSwitch />
-        </Box>
-        <Divider sx={{ my: 1 }} />
         <MenuItem component={Link} href="/settings">
           <ListItemIcon>
             <Settings fontSize="small" />
