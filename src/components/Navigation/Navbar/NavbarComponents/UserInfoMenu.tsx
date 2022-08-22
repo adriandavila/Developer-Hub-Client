@@ -7,6 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import { Link } from "@mui/material";
 
 // Custom Components
 import AppThemeSwitch from "src/components/Misc/AppThemeSwitch";
@@ -85,7 +86,7 @@ export default function UserInfoMenu() {
           <AppThemeSwitch />
         </Box>
         <Divider sx={{ my: 1 }} />
-        <MenuItem>
+        <MenuItem component={Link} href="/settings">
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
