@@ -91,7 +91,7 @@ export default function UserInfoMenu() {
           },
         }}
       >
-        <MenuItem>
+        <MenuItem component={Link} href="/personal-dashboard">
           <ProfileInformation />
         </MenuItem>
         <Divider sx={{ my: 1 }} />
