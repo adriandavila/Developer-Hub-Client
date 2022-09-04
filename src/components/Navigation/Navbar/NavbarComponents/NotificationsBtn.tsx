@@ -86,7 +86,12 @@ export default function NotificationsMenu() {
         }}
       >
         <Box
-          sx={{ width: 350, px: 2, display: "flex", justify: "space-between" }}
+          sx={{
+            width: 350,
+            px: 2,
+            display: "flex",
+            justifyContent: "space-between",
+          }}
         >
           <Typography>Notifications</Typography>
           <Typography component="a" href="" color="secondary">
