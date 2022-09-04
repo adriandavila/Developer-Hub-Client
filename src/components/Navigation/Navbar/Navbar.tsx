@@ -19,6 +19,8 @@ export default function ButtonAppBar() {
       sx={{
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
+      enableColorOnDark
+      color="primary"
     >
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu">

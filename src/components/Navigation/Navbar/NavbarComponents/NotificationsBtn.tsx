@@ -38,7 +38,7 @@ export default function NotificationsMenu() {
         color="inherit"
         onClick={handleOpenNotificationsMenu}
       >
-        <Badge badgeContent={17} color="error">
+        <Badge badgeContent={17} color="secondary">
           <NotificationsOutlinedIcon />
         </Badge>
       </IconButton>
@@ -85,8 +85,13 @@ export default function NotificationsMenu() {
           },
         }}
       >
-        <Box sx={{ width: 350, px: 2 }}>
+        <Box
+          sx={{ width: 350, px: 2, display: "flex", justify: "space-between" }}
+        >
           <Typography>Notifications</Typography>
+          <Typography component="a" href="" color="secondary">
+            Mark all as read
+          </Typography>
         </Box>
       </Menu>
     </Box>
