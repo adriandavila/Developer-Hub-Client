@@ -5,7 +5,6 @@ function Logo() {
     <Typography
       variant="h6"
       sx={{
-        flexGrow: 1,
         fontFamily: '"Caveat", cursive',
         fontSize: "30px",
         textDecoration: "none",
