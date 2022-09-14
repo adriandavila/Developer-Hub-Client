@@ -20,6 +20,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import { getRequestConfig } from "src/mixins";
 import { useSelector } from "react-redux";
 
+// types
+import { User } from "src/types";
+
 function UserManagementTable() {
   const { user } = useSelector((state: any) => state.auth);
   const [users, setUsers] = useState(user);
@@ -51,7 +54,7 @@ function UserManagementTable() {
           </TableHead>
           <TableBody>
             {users.length > 0 &&
-              users.map((user: any, idx: number) => (
+              users.map((user: User, idx: number) => (
                 <TableRow key={idx}>
                   <TableCell>
                     <Box display="flex" alignItems="center">
