@@ -20,12 +20,15 @@ import axios from "axios";
 import { getRequestConfig } from "src/mixins";
 import { toast } from "react-toastify";
 import { red, green } from "@mui/material/colors";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Row(props: { row: any; refreshMethod: any }) {
   const { row, refreshMethod } = props;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   function handleDeleteApiLog(targetID: string): void {
+    setDeleting(true);
     axios
       .delete(`/api/api-logs/${targetID}`, getRequestConfig())
       .then((res) => {
@@ -78,17 +81,23 @@ function Row(props: { row: any; refreshMethod: any }) {
           {row.status}
         </TableCell>
         <TableCell sx={{ py: 0, pr: 0 }}>
-          {/* //! TODO: Implement Button Functionality */}
-          {/* //! TODO: Implement Button Functionality */}
-          <IconButton size="small">
-            <LogoDevOutlinedIcon color="secondary" />
-          </IconButton>
-          <IconButton
-            size="small"
-            onClick={() => handleDeleteApiLog(row["_id"])}
-          >
-            <DeleteOutlineIcon />
-          </IconButton>
+          <Box display="flex" alignItems="center">
+            {/* //! TODO: Implement Button Functionality */}
+            {/* //! TODO: Implement Button Functionality */}
+            <IconButton size="small">
+              <LogoDevOutlinedIcon color="secondary" />
+            </IconButton>
+            {deleting ? (
+              <CircularProgress size={18} color="secondary" sx={{ mx: 1 }} />
+            ) : (
+              <IconButton
+                size="small"
+                onClick={() => handleDeleteApiLog(row["_id"])}
+              >
+                <DeleteOutlineIcon />
+              </IconButton>
+            )}
+          </Box>
         </TableCell>
       </TableRow>
       <TableRow>
