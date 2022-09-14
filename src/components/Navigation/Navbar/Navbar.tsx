@@ -5,6 +5,7 @@ import IconButton from "@mui/material/IconButton";
 
 // Icons
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 
 // Custom components
 import Spacer from "src/components/Misc/Spacer";
@@ -37,7 +38,14 @@ export default function ButtonAppBar() {
         />
         <Logo />
         <Spacer />
-        <NotificationsBtn />
+        <IconButton
+          area-label="open settings page"
+          component="a"
+          href="/settings"
+        >
+          <SettingsOutlinedIcon />
+        </IconButton>
+        <NotificationsBtn aria-label="toggle notifications menu" />
         <Box sx={{ ml: 2 }}>
           <UserInfoMenu />
         </Box>
