@@ -47,7 +47,7 @@ export default function UserInfoMenu() {
 
   const menuDropShadow = {
     light: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-    dark: "drop-shadow(0px 2px 8px rgba(255,255,255,0.1))",
+    dark: "drop-shadow(0px 2px 8px rgba(255,153,204,0.4))",
   };
 
   return (
