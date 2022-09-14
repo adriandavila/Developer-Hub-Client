@@ -18,7 +18,7 @@ root.render(
       <Router>
         <App />
       </Router>
-      <ToastContainer />
+      <ToastContainer newestOnTop position="bottom-left" draggable />
     </Provider>
   </React.StrictMode>
 );
