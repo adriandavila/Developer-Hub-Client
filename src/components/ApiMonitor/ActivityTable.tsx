@@ -19,7 +19,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import axios from "axios";
 import { getRequestConfig } from "src/mixins";
 import { toast } from "react-toastify";
-import { red } from "@mui/material/colors";
+import { red, green } from "@mui/material/colors";
 
 function Row(props: { row: any }) {
   const { row } = props;
@@ -39,13 +39,12 @@ function Row(props: { row: any }) {
             </IconButton>
             <Box
               sx={{
-                height: "20px",
-                width: "20px",
+                height: "18px",
+                width: "18px",
                 borderRadius: "50%",
-                outline: "1px solid white",
                 display: "inline-block",
               }}
-              bgcolor={red[500]}
+              bgcolor={row.http === 200 ? green[500] : red[500]}
             />
           </Box>
         </TableCell>
