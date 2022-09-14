@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 // Custom components
-import UserAvatar from "./UserAvatar";
+import UserAvatar from "src/components/User/UserAvatar";
 
 function ProfileInformation() {
   const { user } = useSelector((state: any) => state.auth);

@@ -13,7 +13,7 @@ import { Link } from "@mui/material";
 
 // Custom Components
 import ProfileInformation from "src/components/Misc/ProfileInformation";
-import UserAvatar from "src/components/Misc/UserAvatar";
+import UserAvatar from "src/components/User/UserAvatar";
 
 // Icons
 import { Logout, Settings } from "@mui/icons-material";
