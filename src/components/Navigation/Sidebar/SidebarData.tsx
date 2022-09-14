@@ -4,7 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 // Developers Icons
 import WebhookIcon from "@mui/icons-material/Webhook";
 // Administrators Icons
-import GroupIcon from "@mui/icons-material/Group";
+import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 
 // Types
 import { ReactElement } from "react";
@@ -35,6 +35,6 @@ export const AdministratorSidebarData: SidebarDatum[] = [
   {
     title: "User Management",
     path: "/user-administration",
-    icon: <GroupIcon />,
+    icon: <ManageAccountsOutlinedIcon />,
   },
 ];
