@@ -28,7 +28,7 @@ function Row(props: { row: any }) {
   return (
     <React.Fragment>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
-        <TableCell>
+        <TableCell sx={{ padding: 0 }}>
           <Box display="flex" alignItems="center">
             <IconButton
               aria-label="expand row"
@@ -50,13 +50,23 @@ function Row(props: { row: any }) {
           </Box>
         </TableCell>
 
-        <TableCell>{row.datetime}</TableCell>
-        <TableCell>{row.route}</TableCell>
-        <TableCell align="center">{row.method}</TableCell>
-        <TableCell align="center">{row.http}</TableCell>
-        <TableCell align="right">{row.error}</TableCell>
-        <TableCell align="right">{row.status}</TableCell>
-        <TableCell>
+        <TableCell sx={{ padding: 0 }}>{row.datetime}</TableCell>
+        <TableCell sx={{ padding: 0 }}>{row.route}</TableCell>
+        <TableCell sx={{ padding: 0 }} align="center">
+          {row.method}
+        </TableCell>
+        <TableCell sx={{ padding: 0 }} align="center">
+          {row.http}
+        </TableCell>
+        <TableCell sx={{ padding: 0 }} align="right">
+          {row.error}
+        </TableCell>
+        <TableCell sx={{ padding: 0 }} align="right">
+          {row.status}
+        </TableCell>
+        <TableCell sx={{ py: 0, pr: 0 }}>
+          {/* //! TODO: Implement Button Functionality */}
+          {/* //! TODO: Implement Button Functionality */}
           <IconButton size="small">
             <LogoDevOutlinedIcon color="secondary" />
           </IconButton>
