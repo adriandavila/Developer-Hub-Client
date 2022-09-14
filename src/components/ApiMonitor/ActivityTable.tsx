@@ -1,3 +1,9 @@
+// Misc but important
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
+
+// MUI Components
 import {
   Box,
   Collapse,
@@ -9,18 +15,20 @@ import {
   TableHead,
   TableRow,
   Typography,
+  CircularProgress,
 } from "@mui/material";
+
+// MUI Icons
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import LogoDevOutlinedIcon from "@mui/icons-material/LogoDevOutlined";
-import React, { useEffect, useState } from "react";
-
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import axios from "axios";
-import { getRequestConfig } from "src/mixins";
-import { toast } from "react-toastify";
+
+// Other MUI
 import { red, green } from "@mui/material/colors";
-import CircularProgress from "@mui/material/CircularProgress";
+
+// Mixins
+import { getRequestConfig } from "src/mixins";
 
 function Row(props: { row: any; refreshMethod: any }) {
   const { row, refreshMethod } = props;
