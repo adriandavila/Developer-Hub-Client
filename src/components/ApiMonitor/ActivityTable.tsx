@@ -57,8 +57,12 @@ function Row(props: { row: any }) {
         <TableCell align="right">{row.error}</TableCell>
         <TableCell align="right">{row.status}</TableCell>
         <TableCell>
-          <LogoDevOutlinedIcon color="secondary" />
-          <DeleteOutlineIcon />
+          <IconButton size="small">
+            <LogoDevOutlinedIcon color="secondary" />
+          </IconButton>
+          <IconButton size="small">
+            <DeleteOutlineIcon />
+          </IconButton>
         </TableCell>
       </TableRow>
       <TableRow>
