@@ -21,9 +21,23 @@ import { getRequestConfig } from "src/mixins";
 import { toast } from "react-toastify";
 import { red, green } from "@mui/material/colors";
 
-function Row(props: { row: any }) {
-  const { row } = props;
+function Row(props: { row: any; refreshMethod: any }) {
+  const { row, refreshMethod } = props;
   const [open, setOpen] = React.useState(false);
+
+  function handleDeleteApiLog(targetID: string): void {
+    axios
+      .delete(`/api/api-logs/${targetID}`, getRequestConfig())
+      .then((res) => {
+        const message = res.data.message;
+        toast.success(message);
+        refreshMethod();
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error("Failed to delete the API log.");
+      });
+  }
 
   return (
     <React.Fragment>
@@ -69,7 +83,10 @@ function Row(props: { row: any }) {
           <IconButton size="small">
             <LogoDevOutlinedIcon color="secondary" />
           </IconButton>
-          <IconButton size="small">
+          <IconButton
+            size="small"
+            onClick={() => handleDeleteApiLog(row["_id"])}
+          >
             <DeleteOutlineIcon />
           </IconButton>
         </TableCell>
@@ -92,6 +109,7 @@ function Row(props: { row: any }) {
 
 function ActivityTable() {
   const [apiLogs, setApiLogs] = useState([] as any[]);
+  const [refreshCount, setRefreshCount] = useState(0);
   useEffect(() => {
     axios
       .get("/api/api-logs", getRequestConfig())
@@ -105,7 +123,9 @@ function ActivityTable() {
           : "API call to get users failed";
         toast.error(message);
       });
-  }, []);
+  }, [refreshCount]);
+
+  const incrementRefreshCount = () => setRefreshCount(refreshCount + 1);
 
   return (
     <TableContainer>
@@ -127,7 +147,7 @@ function ActivityTable() {
         </TableHead>
         <TableBody>
           {apiLogs.map((row, idx) => (
-            <Row key={idx} row={row} />
+            <Row key={idx} row={row} refreshMethod={incrementRefreshCount} />
           ))}
         </TableBody>
       </Table>
