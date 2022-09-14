@@ -46,7 +46,7 @@ function Sidebar() {
             <ProfileInformation />
           </Box>
           <Divider sx={{ mt: 2 }}>
-            <Chip label="H2 Analytics" />
+            <Chip label="H2 Analytics" variant="outlined" color="secondary" />
           </Divider>
           <List>
             {GlobalSidebarData.map((item, index) => {
@@ -61,7 +61,7 @@ function Sidebar() {
             })}
           </List>
           <Divider>
-            <Chip label="Developers" />
+            <Chip label="Developers" variant="outlined" color="secondary" />
           </Divider>
           <List>
             {DeveloperSidebarData.map((item, index) => {
@@ -76,7 +76,7 @@ function Sidebar() {
             })}
           </List>
           <Divider>
-            <Chip label="Administrators" />
+            <Chip label="Administrators" variant="outlined" color="secondary" />
           </Divider>
           <List>
             {AdministratorSidebarData.map((item, index) => {
