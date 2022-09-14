@@ -16,6 +16,7 @@ import UserManagement from "src/pages/Administrators/UserManagement";
 import { Box, CssBaseline, ThemeProvider, Toolbar } from "@mui/material";
 import themes from "src/themes/themes";
 import { ThemeContext } from "./themes/ThemeContext";
+import ApiMonitor from "./pages/Developers/ApiMonitor";
 
 const localStorageTheme: "light" | "dark" | null = localStorage.getItem(
   "selectedTheme"
@@ -47,6 +48,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/settings" element={<Settings />} />
+                  <Route path="/api-monitor" element={<ApiMonitor />} />
                   <Route
                     path="/user-administration"
                     element={<UserManagement />}

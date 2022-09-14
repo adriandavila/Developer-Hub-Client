@@ -2,8 +2,7 @@
 // GlobalSidebarData
 import HomeIcon from "@mui/icons-material/Home";
 // Developers Icons
-import PersonIcon from "@mui/icons-material/Person";
-import CorporateFareIcon from "@mui/icons-material/CorporateFare";
+import WebhookIcon from "@mui/icons-material/Webhook";
 // Administrators Icons
 import GroupIcon from "@mui/icons-material/Group";
 
@@ -26,20 +25,15 @@ export const GlobalSidebarData: SidebarDatum[] = [
 
 export const DeveloperSidebarData: SidebarDatum[] = [
   {
-    title: "Personal Dashboard",
-    path: "/personal-dashboard",
-    icon: <PersonIcon />,
-  },
-  {
-    title: "Team Dashboard",
-    path: "/team-dashboard",
-    icon: <CorporateFareIcon />,
+    title: "API Monitor",
+    path: "/api-monitor",
+    icon: <WebhookIcon />,
   },
 ];
 
 export const AdministratorSidebarData: SidebarDatum[] = [
   {
-    title: "Users",
+    title: "User Management",
     path: "/user-administration",
     icon: <GroupIcon />,
   },
