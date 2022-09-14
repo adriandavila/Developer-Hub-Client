@@ -31,7 +31,10 @@ function UserManagementTable() {
       })
       .catch((err) => {
         console.error(err);
-        toast.error("Failed to get users from DB");
+        const message = err.response?.data?.message
+          ? err.response.data.message
+          : "API call to get users failed";
+        toast.error(message);
       });
   }, []);
 
