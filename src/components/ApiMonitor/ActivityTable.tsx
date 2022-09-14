@@ -43,6 +43,7 @@ function Row(props: { row: any; refreshMethod: any }) {
         const message = res.data.message;
         toast.success(message);
         refreshMethod();
+        setDeleting(false);
       })
       .catch((error) => {
         console.error(error);
@@ -131,7 +132,7 @@ function ActivityTable() {
     axios
       .get("/api/api-logs", getRequestConfig())
       .then((res) => {
-        setApiLogs(res.data.apiErrorLogs || []);
+        setApiLogs(res.data.apiLogs || []);
       })
       .catch((err) => {
         console.error(err);
