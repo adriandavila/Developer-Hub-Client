@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import PageTitle from "src/components/Misc/PageTitle";
 import UserManagementTable from "src/components/User/UserManagementTable";
 
