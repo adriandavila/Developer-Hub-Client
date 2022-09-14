@@ -39,7 +39,8 @@ export default function ButtonAppBar() {
         <Logo />
         <Spacer />
         <IconButton
-          area-label="open settings page"
+          size="large"
+          aria-label="open settings page"
           component="a"
           href="/settings"
         >
