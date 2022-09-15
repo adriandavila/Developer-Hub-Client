@@ -3,7 +3,9 @@ export const getRequestConfig = (): { headers: { Authorization: string } } => {
   const token = JSON.parse(localStorage.getItem("user") || "").token;
   const requestConfig = {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: token
+        ? `Bearer ${token}`
+        : "Failed to get token from localStorage",
     },
   };
 
