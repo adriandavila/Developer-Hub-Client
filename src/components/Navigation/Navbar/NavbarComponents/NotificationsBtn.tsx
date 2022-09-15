@@ -7,7 +7,7 @@ import { IconButton, Badge, Menu, Typography } from "@mui/material";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 
 import Box from "@mui/material/Box";
-import { useTheme } from "src/hooks/useTheme";
+import { useTheme } from "src/app/hooks";
 
 export default function NotificationsMenu() {
   const [anchorElNotifications, setAnchorElNotifications] =

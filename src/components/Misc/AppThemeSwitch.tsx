@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
-import { useTheme } from "src/hooks/useTheme";
+import { useTheme } from "src/app/hooks";
 
 const ThemeSwitch = styled(Switch)(({ theme }) => ({
   width: 62,

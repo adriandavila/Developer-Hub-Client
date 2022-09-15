@@ -22,7 +22,7 @@ import Box from "@mui/material/Box";
 
 // Services
 import { logout, reset } from "src/features/auth/authSlice";
-import { useTheme } from "src/hooks/useTheme";
+import { useTheme } from "src/app/hooks";
 
 export default function UserInfoMenu() {
   const navigate = useNavigate();
