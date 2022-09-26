@@ -3,6 +3,7 @@ import { Typography, Link } from "@mui/material";
 function Logo() {
   return (
     <Typography
+      data-test-id="app-logo"
       variant="h6"
       sx={{
         fontFamily: '"Caveat", cursive',
